@@ -49,9 +49,7 @@ NVRTC_ERROR_BUILTIN_OPERATION_FAILURE = 7
 
 
 def encode_str(s):
-    if is_python2:
-        return s
-    return s.encode("utf-8")
+    return s
 
 
 def encode_str_list(str_list):
@@ -93,7 +91,7 @@ class NVRTCInterface(object):
         """
         if sizeof(c_void_p) == 8:
             if system() == 'Windows':
-                def_lib_name = 'nvrtc64_92.dll'
+                def_lib_name = 'nvrtc64_100_0.dll'
             elif system() == 'Darwin':
                 def_lib_name = 'libnvrtc.dylib'
             else:
